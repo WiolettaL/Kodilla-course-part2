@@ -11,8 +11,8 @@ import java.util.List;
 
 import static org.springframework.util.MimeTypeUtils.APPLICATION_JSON_VALUE;
 
-
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/v1/task")
 public class TaskController {
 
@@ -37,7 +37,7 @@ public class TaskController {
   //      return new TaskDto(1L, "title test", "test_content");
   //  }
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "deleteTask")
+    @RequestMapping(method = RequestMethod.DELETE, value = "deleteTask/{taskId}")
     public void deleteTask(@PathVariable Long taskId) {
         service.deleteTask(taskId);
     }

@@ -37,8 +37,8 @@ public class TaskController {
   //      return new TaskDto(1L, "title test", "test_content");
   //  }
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "deleteTask/{taskId}")
-    public void deleteTask(@PathVariable Long taskId) {
+    @RequestMapping(method = RequestMethod.DELETE, value = "deleteTask")
+    public void deleteTask(@RequestParam Long taskId) {
         service.deleteTask(taskId);
     }
 

@@ -96,7 +96,6 @@ public class TrelloClientTest {
     public void shouldReturnEmptyList() throws URISyntaxException {
 
         //Given
-        //TrelloBoardDto[] emptyList = new TrelloBoardDto[0];
 
         URI uri = new URI("http://test.com/members/wiolettaledwoyw/boards?key=test&token=test&fields=name,id&lists=all");
 

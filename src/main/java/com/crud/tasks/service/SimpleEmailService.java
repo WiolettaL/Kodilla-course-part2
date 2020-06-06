@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static org.apache.logging.log4j.util.Strings.isNotBlank;
+
 @Service
 public class SimpleEmailService {
 
@@ -34,9 +36,9 @@ public class SimpleEmailService {
         mailMessage.setTo(mail.getMailTo());
         mailMessage.setSubject(mail.getSubject());
         mailMessage.setText(mail.getMessage());
-        if(!mail.getToCC().isEmpty()) {
-            mailMessage.setCc(mail.getToCC());
-        }
+       // if(!mail.getToCC().isEmpty()) {
+       //     mailMessage.setCc(mail.getToCC());
+       // }
         return mailMessage;
     }
 }

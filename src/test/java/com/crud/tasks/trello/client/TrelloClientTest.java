@@ -4,10 +4,8 @@ import com.crud.tasks.config.TrelloConfig;
 import com.crud.tasks.domain.CreatedTrelloCard;
 import com.crud.tasks.domain.TrelloBoardDto;
 import com.crud.tasks.domain.TrelloCardDto;
-import com.sun.jndi.toolkit.url.Uri;
 import org.junit.Before;
 
-//import org.junit.jupiter.api.Test;
 import  org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

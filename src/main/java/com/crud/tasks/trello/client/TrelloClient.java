@@ -36,7 +36,6 @@ public class TrelloClient {
                 .queryParam("token", trelloConfig.getTrelloToken())
                 .queryParam("fields", "name,id")
                 .queryParam("lists", "all").build().encode().toUri();
-
     }
 
     public List<TrelloBoardDto> getTrelloBoards() {
@@ -53,20 +52,8 @@ public class TrelloClient {
 
     }
 
-
-//    public List<TrelloBoardDto> getTrelloBoards() {
-//        System.out.println("URL result: " + getTrelloBoardURI());
-//
-//        TrelloBoardDto[] boardsResponse = restTemplate.getForObject(getTrelloBoardURI(), TrelloBoardDto[].class);
-//
-//        if (boardsResponse != null) {
-//            return Arrays.asList(ofNullable(boardsResponse).orElse(new TrelloBoardDto[0]));
-//        }
-//        return new ArrayList<>();
-//    }
-
     public CreatedTrelloCard createNewCard(TrelloCardDto trelloCardDto) {
-        URI url = UriComponentsBuilder.fromHttpUrl(trelloConfig.getTrelloApiEndpoint() + "/cards")
+        URI url = UriComponentsBuilder.fromHttpUrl(trelloConfig.getTrelloApiEndpoint() + "/cards/")
                 .queryParam("key", trelloConfig.getTrelloAppKey())
                 .queryParam("token", trelloConfig.getTrelloToken())
                 .queryParam("name", trelloCardDto.getName())
@@ -79,4 +66,18 @@ public class TrelloClient {
         return restTemplate.postForObject(url, null, CreatedTrelloCard.class);
     }
 }
+
+//    public List<TrelloBoardDto> getTrelloBoards() {
+//        System.out.println("URL result: " + getTrelloBoardURI());
+//
+//        TrelloBoardDto[] boardsResponse = restTemplate.getForObject(getTrelloBoardURI(), TrelloBoardDto[].class);
+//
+//        if (boardsResponse != null) {
+//            return Arrays.asList(ofNullable(boardsResponse).orElse(new TrelloBoardDto[0]));
+//        }
+//        return new ArrayList<>();
+//    }
+
+
+
 

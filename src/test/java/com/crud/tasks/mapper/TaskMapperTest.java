@@ -23,8 +23,10 @@ public class TaskMapperTest {
     public void mapToTaskTest() {
         //Given
         TaskDto taskDto = new TaskDto(1L, "Title1", "Content1");
+
         //When
         Task task = taskMapper.mapToTask(taskDto);
+
         //Then
         assertEquals(1L, task.getId().longValue());
         assertEquals("Title1", task.getTitle());
